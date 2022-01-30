@@ -12,15 +12,15 @@ Todo List app will ask for an input for a new todo, using JavaScript, we could t
 Todo List can also store your todos to a local storage so you don't have to worry about missing todos!
 
 # Credits
-Founder: Blue Duck#8344
-Helper: Github Copilot
-Idea: https://www.makeuseof.com/javascript-beginner-project-ideas/
+Founder: Blue Duck#8344<br>
+Helper: Github Copilot<br>
+Idea: https://www.makeuseof.com/javascript-beginner-project-ideas/<br>
 Ui Design: https://www.youtube.com/watch?v=ykuD2QOZkhc
 
 # Contact
-Discord: Blue Duck#8344
-Email: cantcode023@gmail.com
-Twitter: https://twitter.com/CantCode023
+Discord: Blue Duck#8344<br>
+Email: cantcode023@gmail.com<br>
+Twitter: https://twitter.com/CantCode023<br>
 *NOTE: Most active on Discord*
 
 # License
