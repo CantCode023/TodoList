@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif
+}
+
+html {
+    height: 100vh;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    background: rgb(68, 68, 68);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper {
+    max-width: 400px;
+    width: 100%;
+    background: #fff;
+    border-radius: 5px;
+    padding: 25px;
+}
+
+.wrapper header {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.wrapper .inputField {
+    display: flex;
+    height: 45px;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.inputField input {
+    outline: none;
+    width: 85%;
+    height: 100%;
+    border-top: 1px solid #ccc;
+    border-right: none;
+    border-bottom: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    font-size: 17px;
+    border-radius: 3px 0px 0px 3px;
+    padding-left: 15px;   
+}
+
+.inputField button {
+    outline: none;
+    width: 60px;
+    height: 100%;
+    border: none;
+    background: #68eacc;
+    color: #fff;
+    font-size: 17px;
+    border-radius: 0px 3px 3px 0px;
+    cursor: pointer;
+}
+
+.wrapper .todoList {
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+.todoList li {
+    list-style: none;
+    height: 45px;
+    line-height: 45px;
+    position: relative;
+    background: #e0e0e0;
+    border-radius: 3px;
+    margin-bottom: 8px;
+    padding: 0 15px;
+    cursor: default;
+    overflow: hidden;
+}
+
+.icons {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    right: -90px;
+    transition: 0.25s;
+}
+
+.todoList li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.todoList li span:nth-child(2) {
+    position: relative;
+    cursor: pointer;
+    color: #fff;
+    width: 45px;
+    text-align: center;
+    background: #e74c3c;
+    border-radius: 0 3px 3px 0;
+}
+
+.todoList li span:nth-child(1) {
+    position: relative;
+    cursor: pointer;
+    color: #fff;
+    width: 45px;
+    text-align: center;
+    background: #24ff24;
+}
+
+.todoList li:hover div {
+    right: 0px;
+}
+
+.wrapper .footer {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    margin-top: 25px;
+    justify-content: space-between;
+    cursor: default;
+}
+
+.footer button {
+    height: 100%;
+    border: none;
+    background: #dd8f11;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 6px 10px;
+}
