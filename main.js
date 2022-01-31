@@ -44,14 +44,19 @@ function showTasks() {
     } else {
         listArray = JSON.parse(getLocalStorageData)
     }
-    const pendingTasks = document.querySelector(".pending")
-    pendingTasks.textContent = listArray.length
     let newLiTag = ""
+    let finished = 0
     listArray.forEach(function (item, index) {
-        newLiTag += `<li>${item} <div class="icons"><span onclick="checkTask('${item}', ${index})"><i class="fas fa-check"></i></span><span onclick="deleteTask(${index})"><i class="fas fa-trash"></i></span></div></li>`
-        console.log(newLiTag)
+        if (item.includes("<strike>")) {
+            newLiTag += `<li>${item} <div class="icons"><span style="background: #e74c3c;" onclick="checkTask('${item}', ${index})"><i class="fas fa-times"></i></span><span onclick="deleteTask(${index})"><i class="fas fa-trash"></i></span></div></li>`
+            finished += 1
+        } else {
+            newLiTag += `<li>${item} <div class="icons"><span onclick="checkTask('${item}', ${index})"><i class="fas fa-check"></i></span><span onclick="deleteTask(${index})"><i class="fas fa-trash"></i></span></div></li>`
+        }
     })
     todoList.innerHTML = newLiTag
+    const pendingTasks = document.querySelector(".pending")
+    pendingTasks.textContent = listArray.length - finished
 }
 
 function deleteTask(index) {
@@ -65,7 +70,24 @@ function deleteTask(index) {
 function checkTask(item, index) {
     let getLocalStorageData = localStorage.getItem('todoList')
     listArray = JSON.parse(getLocalStorageData)
-    listArray.splice(index, 1, `<strike>${item}</strike>`)
+    // from todoList find item in li
+    let li = document.querySelectorAll('.todoList li')
+    let liItem = li[index]
+    let foundLi = undefined
+    console.log(liItem.textContent)
+    console.log(item)
+    if (liItem.textContent.includes(item.replace("<strike>", "").replace("</strike>", ""))) {
+        foundLi = liItem
+    } else {}
+    // check if item already have strike
+    if (item.includes("<strike>")) {
+        // remove strike
+        listArray[index] = item.replace("<strike>", "").replace("</strike>", "")
+        localStorage.setItem('todoList', JSON.stringify(listArray))
+        // showTasks();
+    } else {
+        listArray.splice(index, 1, `<strike>${item}</strike>`)
+    }
     localStorage.setItem('todoList', JSON.stringify(listArray))
     showTasks();
 }
