@@ -1,5 +1,5 @@
 # Todo List
-Managing todos has never been easier.
+Managing todos have never been easier.
 
 <img src="https://cdn.discordapp.com/attachments/926076797735563296/937439701269372959/unknown.png">
 
